@@ -15,4 +15,8 @@ mongoose.connection.once('open', function(){
 });
 });
 
-
+beforeEach(function(done){
+    mongoose.connection.collections.employees.drop(function(){
+        done();
+    });
+});
