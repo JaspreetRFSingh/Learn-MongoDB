@@ -1,15 +1,24 @@
 const mocha = require('mocha');
 const assert = require('assert');
-
+const Employee = require('../model/employee');
 //`npm run test` command by default looks into the test directory of the root and tests all the describe() methods.
 
 //describe tests
-describe('Some demo tests', ()=>{
-    //create different tests
-    
-    //it block describes one test
-    it('add two numbers together', ()=>{
-        assert(2+3 === 5);
-    });
 
+describe('Saving records', ()=>{
+    it('Insert operation in MongoDB', (done)=>{
+        var emp = new Employee({
+            name: 'Jaspreet',
+            employeeId: 122345
+        });
+
+        /*asynchronous request*/emp.save().then(function(){
+            assert(emp.isNew === false);
+            done();
+        });
+        
+
+
+    });
 });
+
