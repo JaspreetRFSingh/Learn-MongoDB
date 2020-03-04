@@ -2,8 +2,11 @@ const assert = require('assert');
 const Employee = require('../model/employee');
 
 describe('Updating records', function(){
+  
+
   var char;
   beforeEach(function(done){
+    
     char = new Employee({
       name: 'Jaspreet',
       employeeId : 202000
@@ -23,7 +26,7 @@ describe('Updating records', function(){
 //   });
 
   //update operator ***important***
-  it('incremets the employeeId by 1', function(done){
+  it('increments the employeeId by 1', function(done){
     Employee.update({}, {$inc :{employeeId:1}}).then(function(){
         Employee.findOne({name:'Jaspreet'}).then(function(record){
              assert(record.employeeId === 202001);
