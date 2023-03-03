@@ -9,7 +9,7 @@
   "author": "Jaspreet Singh",
   "license": "ISC",
   "dependencies": {
-    "mocha": "^7.0.1",
+    "mocha": "^7.2.0",
     "mongoose": "^5.9.3"
   }
 }
